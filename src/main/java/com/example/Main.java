@@ -7,6 +7,7 @@ public class Main {
     Greeting greeting = new HelloWorldGreeting();
     greeting.sayHello();
 
+//    Better way for implementing Fn Interfaces , Directly create obj and override the fn
     Greeting greeting2 = new Greeting() {
       @Override
       public void sayHello() {
