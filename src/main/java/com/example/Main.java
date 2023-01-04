@@ -16,6 +16,10 @@ public class Main {
     };
     greeting2.sayHello();
 
+//    Convert to Lambda - () Args ; -> fn output
+    Greeting greeting3 = () -> System.out.println("Hello from Lambda");
+    greeting3.sayHello();
+
   }
 
 }
