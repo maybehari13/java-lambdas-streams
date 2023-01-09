@@ -1,5 +1,8 @@
 package com.example;
 
+import java.util.Random;
+import java.util.function.IntBinaryOperator;
+
 public class Main {
 
   public static void main(String[] args) {
@@ -16,10 +19,24 @@ public class Main {
     };
     greeting2.sayHello();
 
-//    Convert to Lambda - () Args ; -> fn output
+//    Lambda Syntax:: Declare fn obj; () Args ; -> fn output ; call method from obj
     Greeting greeting3 = () -> System.out.println("Hello from Lambda");
     greeting3.sayHello();
 
+    Calculator calc = (int x, int y) -> {
+      Random random = new Random ();
+      int nextRandom = random.nextInt(50);
+      return x + y + nextRandom;
+    };
+    System.out.println(calc.calculate(1,5));
+
+//    Java.util.function => java ready-made interface package for Lambdas
+    IntBinaryOperator calculate = (x, y) -> {
+      Random random = new Random ();
+      int nextRandom = random.nextInt(50);
+      return x + y + nextRandom;
+    };
+    System.out.println(calculate.applyAsInt(1,5));
   }
 
 }
